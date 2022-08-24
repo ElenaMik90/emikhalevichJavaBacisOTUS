@@ -1,7 +1,7 @@
 package HW3;
 
 import java.util.Scanner;
-
+//asdfrgthyujki
 public class homework3 {
     public static void main(String[] args) {
 // Переменные для хранения количества правильных и неправильных ответов
