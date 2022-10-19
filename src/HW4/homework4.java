@@ -11,9 +11,7 @@ public class homework4 {
         String[][] AnswerOptions = {{"1. Тиват", "2. Белгород", "3. Вране", "4. Белград"}, {"1. Φ", "2. Δ", "3. Й", "4. \u03A1"}, {"1. 0,67", "2. 273,15", "3. 9,81", "4. 1,618"}, {"1. Кандела", "2. Кельвин", "3. Моль", "4. Люкс"}};
         int[] AllAnswers = {0, 0, 0, 0};
         int[] TrueAnswers = {4, 3, 3, 1};
-
         Scanner scanner = new Scanner(System.in);
-
         for (int i = 0; i < Questions.length; i++) {
             System.out.println(Questions[i]);
             {
