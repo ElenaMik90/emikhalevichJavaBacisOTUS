@@ -54,5 +54,3 @@ public class homework4 {
         System.out.println("\nРезультат: правильно " + correctCount + ", неправильно " + wrongCount);
     }
 }
-
-
