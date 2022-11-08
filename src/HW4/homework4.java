@@ -20,7 +20,6 @@ public class homework4 {
                     System.out.println(answerOptions[i][j]);
                 }
                 System.out.print("Ваш вариант ответа: ");
-
                 if (scanner.hasNextInt()) {
                     while (scanner.hasNextInt()) {
                         number = scanner.nextInt();
@@ -28,10 +27,6 @@ public class homework4 {
                             break;
                         } else {
                             System.out.println("Повторите ввод, такого варианта ответа нет!");
-//                            while (number > 0 && number < 5) {
-//                                number = scanner.nextInt();
-//                                break;
-//                            }
                             for (; number < 0 && number > 5; ) {
                                 number = scanner.nextInt();
                             }
@@ -51,6 +46,7 @@ public class homework4 {
                 System.out.println(text);
             }
         }
+
         System.out.println("\nРезультат: правильно " + correctCount + ", неправильно " + wrongCount);
     }
 }
