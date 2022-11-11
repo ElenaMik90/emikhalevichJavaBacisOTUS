@@ -67,5 +67,6 @@ public class homework5 {
             }
             System.out.println(text);
         }
+        System.out.println("\nРезультат: правильно " + correctCount + ", неправильно " + wrongCount);
     }
 }
