@@ -12,10 +12,10 @@ public class homework5 {
         Questions3.setTextQuestion("Вопрос 3. Значение физической постоянной ускорения свободного падения (нормальное) в м/с^2? Указать номер варианта ответа");
         Questions Questions4 = new Questions();
         Questions4.setTextQuestion("Вопрос 4. Что из перечисленного является единицей измерения силы света (СИ)? Указать номер варианта ответа");
-        Questions1.lines = new AnswerOptions(new String[]{"1. Тиват", "2. Белгород ", "3. Вране", "4. Белград"});
-        Questions2.lines = new AnswerOptions(new String[]{"1. Φ", "2. Δ", "3. Й", "4. \u03A1"});
-        Questions3.lines = new AnswerOptions(new String[]{"1. 0,67", "2. 273,15", "3. 9,81", "4. 1,618"});
-        Questions4.lines = new AnswerOptions(new String[]{"1. Кандела", "2. Кельвин", "3. Моль", "4. Люкс"});
+        Questions1.lines = new AnswerOptions(new String[]{"1. Тиват", "2. Белгород ", "3. Вране", "4. Белград"},4);
+        Questions2.lines = new AnswerOptions(new String[]{"1. Φ", "2. Δ", "3. Й", "4. \u03A1"},3);
+        Questions3.lines = new AnswerOptions(new String[]{"1. 0,67", "2. 273,15", "3. 9,81", "4. 1,618"},3);
+        Questions4.lines = new AnswerOptions(new String[]{"1. Кандела", "2. Кельвин", "3. Моль", "4. Люкс"},1);
         return new Questions[]{Questions1, Questions2, Questions3, Questions4};
     }
 
