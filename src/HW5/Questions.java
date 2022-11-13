@@ -4,6 +4,8 @@ public class Questions {
     private String textQuestion;
     AnswerOptions lines;
 
+    int checkResult;
+
     public String getTextQuestion() {
         return textQuestion;
     }
@@ -19,4 +21,5 @@ public class Questions {
     public void setLines(AnswerOptions lines) {
         this.lines = lines;
     }
+
 }

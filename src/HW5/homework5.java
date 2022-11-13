@@ -23,7 +23,6 @@ public class homework5 {
         int correctCount = 0;
         int wrongCount = 0;
         String text;
-        int[] trueAnswers = {4, 3, 3, 1};
         int number = 0;
 
         Scanner scanner = new Scanner(System.in);
@@ -58,7 +57,7 @@ public class homework5 {
                 break;
             }
 
-            if (trueAnswers[i] == number) {
+                if (currentQuestions.lines.result == number) {
                 correctCount++;
                 text = "правильно\n ----------------------";
             } else {
