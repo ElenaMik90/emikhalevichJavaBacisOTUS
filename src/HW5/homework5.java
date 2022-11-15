@@ -29,6 +29,7 @@ public class homework5 {
         Questions[] questions = questionsGeneration();
         int sizeQuestions = questions.length;
 
+
         for (int i = 0; i < sizeQuestions; i++) {
             Questions currentQuestions = questions[i];
             System.out.println(currentQuestions.getTextQuestion());
@@ -36,7 +37,9 @@ public class homework5 {
             for (int j = 0; j < sizeAnswer; j++) {
                 System.out.println(currentQuestions.lines.textAnswer[j]);
             }
+
             System.out.println("Ваш вариант ответа");
+
             if (scanner.hasNextInt()) {
                 while (scanner.hasNextInt()) {
                     number = scanner.nextInt();

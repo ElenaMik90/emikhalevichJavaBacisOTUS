@@ -27,8 +27,8 @@ public class homework7 {
             System.out.println("Благодарим за использование нашей платфомы");
         }
 
-        String src = "src/HW6/File/log.txt";
-        String dest = "src/HW6/File/copy.txt";
+        String src = "src/HW7/File/log.txt";
+        String dest = "src/HW7/File/copy.txt";
 
         try (FileInputStream input = new FileInputStream(src);
 
