@@ -1,10 +1,13 @@
-package HW7;
+package HW8;
 
-import java.io.*;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 
 
-public class homework7 {
+public class homework8 {
 
     public static void main(String[] args) {
         User user1 = new User("Иванов", 28);
@@ -27,8 +30,8 @@ public class homework7 {
             System.out.println("Благодарим за использование нашей платфомы");
         }
 
-        String src = "src/HW7/File/log.txt";
-        String dest = "src/HW7/File/copy.txt";
+        String src = "src/HW8/File/log.txt";
+        String dest = "src/HW8/File/copy.txt";
 
         try (FileInputStream input = new FileInputStream(src);
 
@@ -41,6 +44,5 @@ public class homework7 {
             e.printStackTrace();
         }
         System.out.println("-----------------------" + "\n" + "try-with-resources GONE");
-
     }
 }

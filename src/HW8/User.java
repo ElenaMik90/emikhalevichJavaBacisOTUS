@@ -1,4 +1,4 @@
-package HW7;
+package HW8;
 
 public class User {
     private String lastName;
