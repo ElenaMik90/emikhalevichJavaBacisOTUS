@@ -17,8 +17,8 @@ public class homework7 {
         Account account6 = new Account(100300);
         Account account7 = new Account(100301);
 
-
         HashMap<Client, HashSet<Account>> ListClients;
+        {
             ListClients = new HashMap<>();
             HashSet<Account> accountClient1 = new HashSet<>();
             accountClient1.add(account1);
@@ -33,14 +33,9 @@ public class homework7 {
             ListClients.put(client1, accountClient1);
             ListClients.put(client2, accountClient2);
             ListClients.put(client3, accountClient3);
-
-
+        }
         System.out.println("Получить аккаунт по ФИО: " + Bank.getAccount(ListClients));
         System.out.println("-------------------------------");
         System.out.println("Получить имя клиента по номеру счёта: " + Bank.findClient(ListClients));
-
-
     }
-
-
 }

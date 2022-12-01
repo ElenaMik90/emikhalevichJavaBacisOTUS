@@ -13,6 +13,7 @@ public class Client {
         if (age != client.age) return false;
         return name.equals(client.name);
     }
+
     @Override
     public int hashCode() {
         int result = name.hashCode();
@@ -24,6 +25,7 @@ public class Client {
         this.name = name;
         this.age = age;
     }
+
     public String getName() {
         return name;
     }
