@@ -10,7 +10,7 @@ public class testDiceImpl {
             int max = 6;
             DiceImpl testDice = new DiceImpl();
             int roll = testDice.roll();
-            if (max <= roll & min >= roll) {
+            if (min <= roll & max >= roll) {
                 System.out.printf("\"%s\" пройдено %n", scenario);
             } else {
                 throw new Exception("Выпавшее значение не входит в диапозон от 1 до 6: " + roll);

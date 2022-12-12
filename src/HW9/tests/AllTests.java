@@ -1,5 +1,6 @@
 package HW9.tests;
 
+import HW9.tests.unit.GameNullTest;
 import HW9.tests.unit.testDiceImpl;
 import HW9.tests.unit.testDiceImplDraw;
 import HW9.tests.unit.testGameWinnerPlayer1;
@@ -9,6 +10,7 @@ public class AllTests {
         new testDiceImpl().testDice();
         new testDiceImplDraw().testDiceDraw();
         new testGameWinnerPlayer1().testGame();
+        new GameNullTest().testGameNull();
     }
 }
 

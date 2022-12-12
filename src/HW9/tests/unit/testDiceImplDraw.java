@@ -1,22 +1,26 @@
 package HW9.tests.unit;
-import HW9.game.Dice;
+
+import HW9.game.Game;
+import HW9.game.Player;
 
 public class testDiceImplDraw {
     public static void testDiceDraw() {
-        String scenario = "ТЕСТ2: Должен быть победитель";
+        String scenario = "ТЕСТ2: В игре должен быть победитель";
         try {
-            Dice testDice = new DiceImplTest();
-            int dicePlayer1 = testDice.roll();
-            int dicePlayer2 = testDice.roll();
-            if (dicePlayer1 != dicePlayer2) {
+            DiceImplTest testDice = new DiceImplTest();
+            GameWinnerConsolePrinterTest winnerPrinterTest = new GameWinnerConsolePrinterTest();
+            Player player1 = new Player("Вася");
+            Player player2 = new Player("Игорь");
+            Game gameTest = new Game(testDice, winnerPrinterTest);
+            gameTest.playGame(player1, player2);
+            if (winnerPrinterTest.winner == null)
                 System.out.printf("\"%s\" пройдено %n", scenario);
-            }
             else {
-                throw new Exception("Победителей нет, выпало одинаковое знаение: " + dicePlayer1 + " = " + dicePlayer2);
+                throw new Exception("Победителей нет, выпало одинаковое знаение: ");
             }
         } catch (Exception e) {
-            System.err.printf("\"%s\" не пройдено.  \"%s\" %n", scenario, e.getMessage());
+            System.err.printf("\"%s\" не пройдено. \"%s\" %n", scenario, e.getMessage());
         }
+
     }
 }
-
