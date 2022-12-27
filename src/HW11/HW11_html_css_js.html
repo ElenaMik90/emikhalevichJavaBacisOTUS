@@ -4,118 +4,109 @@
     <meta charset="UTF-8">
     <title>Домашняя работа</title>
     <style>
-        h1, h2, h3 {
-            color: green;
-        }
-        .students-tab {
-            border: 1px solid steelblue;
-            width: 450px;
-            border-collapse: collapse;
-            margin-bottom: 50px;
-       }
-        .studentsAdd-tab {
-            border: 1px solid black;
-            width: 100%;
-            max-width: 475px;
-            border-collapse: collapse;
-            margin-bottom: 50px;
-            background-color: #f1f1f1;
-            font-style: Times;
-        }
-        .students-tab tr td, th {
-            border: 1px solid steelblue;
-            padding: 7px;
-        }
-		.studentsAdd-tab tr td {
-            border: 2px solid ;
-            padding: 15px;
-            width: 100%
-        }
-        .students-tab-col1 {
-            width: 350px;
-        }
-		.students-tab-col2 {
-            width: 200px;
-        }
-		.students-tab-col3 {
-            width: 220px;
-        }
-        .students-tab-col4 {
-            width: 150px;
-        }
-        .bg-color{
-            background-color: #f1f1f1
-        }
-    </style>
+				h1, h2, h3 {
+					color: green;
+				}
+				.students-tab {
+					border: 1px solid steelblue;
+					width: 450px;
+					border-collapse: collapse;
+					margin-bottom: 50px;
+			   }
+				.studentsAdd-tab {
+					border: 1px solid black;
+					width: 100%;
+					max-width: 475px;
+					border-collapse: collapse;
+					margin-bottom: 50px;
+					background-color: #f1f1f1;
+					font-style: Times;
+				}
+				.students-tab tr td, th {
+					border: 1px solid steelblue;
+					padding: 7px;
+				}
+				.studentsAdd-tab tr td {
+					border: 2px solid ;
+					padding: 15px;
+					width: 100%
+				}
+				.students-tab-col1 {
+					width: 350px;
+				}
+				.students-tab-col2 {
+					width: 200px;
+				}
+				.students-tab-col3 {
+					width: 220px;
+				}
+				.students-tab-col4 {
+					width: 150px;
+				}
+				.bg-color{
+					background-color: #f1f1f1
+				}
+			</style>
 
     <script>
-	"use strict"
-        function addStudent() {
-            var table = document.getElementById("studentsTab");
-			var studentFIO = document.getElementById("studentFIO").value;
-            var studentDateBirth = document.getElementById("studentDateBirth").value;
-            var studentGender = document.getElementById("studentGender").value;
-			var row = table.insertRow(4);
-			var cell1 = row.insertCell(0);
-			var cell2 = row.insertCell(1);
-			var cell3 = row.insertCell(2);
-			var cell4 = row.insertCell(3);
-			cell4.class= "calcMedianAge";
-			cell1.innerHTML = studentFIO;
-			cell2.innerHTML = studentGender;
-			cell3.innerHTML = studentDateBirth;
-			cell4.innerHTML = getAgeStudent();
-<<<<<<< HEAD
-			setMedianAge();
+		"use strict"
+			var c = 3;
+				function addStudent() {
+					c ++;
+					var table = document.getElementById("studentsTab");
+					var studentFIO = document.getElementById("studentFIO").value;
+					var studentDateBirth = document.getElementById("studentDateBirth").value;
+					var studentGender = document.getElementById("studentGender").value;
+					var row = table.insertRow(c);
+					var cell1 = row.insertCell(0);
+					var cell2 = row.insertCell(1);
+					var cell3 = row.insertCell(2);
+					var cell4 = row.insertCell(3);
+					cell4.class= "calcMedianAge";
+					cell1.innerHTML = studentFIO;
+					cell2.innerHTML = studentGender;
+					cell3.innerHTML = studentDateBirth;
+					cell4.innerHTML = getAgeStudent();
+					setMedianAge();
+			   }
 
-=======
->>>>>>> origin/HW11
-        }
+				 function getAgeStudent (){
+					var today = new Date();
+					var studentDateBirthVal = new Date (document.getElementById("studentDateBirth").value);
+					var age = today.getFullYear() - studentDateBirthVal.getFullYear();
+					var m = today.getMonth() - studentDateBirthVal.getMonth();
+					if (m < 0 || (m === 0 && today.getDate() < studentDateBirthVal.getDate()))
+					age--;
+					return age;
+				}
 
-         function getAgeStudent (){
-            var today = new Date();
-            var studentDateBirthVal = new Date (document.getElementById("studentDateBirth").value);
-            var age = today.getFullYear() - studentDateBirthVal.getFullYear();
-            var m = today.getMonth() - studentDateBirthVal.getMonth();
-            if (m < 0 || (m === 0 && today.getDate() < studentDateBirthVal.getDate()))
-            age--;
-            return age;
-        }
+				function setMedianAge (){
+					var table = document.getElementById("studentsTab");
+					var actualAgeCell = getActualAgeCell(table);
+					var medianAge = getMedianAge(actualAgeCell);
+					showMedianAge(medianAge, medianAgeCell);
+				}
+				function getActualAgeCell(table){
+					var calcMedianAged = table.querySelectorAll('td.calcMedianAge');
+					return calcMedianAged;
+					}
 
-        function setMedianAge (){
-            var table = document.getElementById("studentsTab");
-            var actualAgeCell = getActualAgeCell(table);
-            var medianAge = getMedianAge(actualAgeCell);
-            showMedianAge(medianAge, medianAgeCell);
-        }
+				function getMedianAge (elms){
+					var sum = 0;
+					var sumMedian = 0;
+					var length = elms.length;
+					for (var i = 0; i < length; i++ ){
+						sum += Number(elms[i].innerHTML);
+						}
+					sumMedian = parseInt(sum/length);
+					return sumMedian;
+			   }
 
-        function getActualAgeCell(table){
-            var calcMedianAged = table.querySelectorAll('td.calcMedianAge');
-            return calcMedianAged;
-            }
-
-        function getMedianAge (elms){
-            var sum = 0;
-<<<<<<< HEAD
-            var sumMedian = 0;
-=======
-            var sumMedian = 10;
->>>>>>> origin/HW11
-            var length = elms.length;
-            for (var i = 0; i < length; i++ ){
-            sum += Number(elms[i].innerHTML);
-            sumMedian = parseInt(sum/length);
-            }
-            return sumMedian;
-       }
-
-        function showMedianAge (sumMedian, elms){
-            elms.innerHTML = sumMedian;
-        }
-
-    </script>
+				function showMedianAge (sumMedian, elms){
+					elms.innerHTML = sumMedian;
+				}
+		</script>
 </head>
-
 <body>
 <h2>
     Домашняя работа
@@ -126,12 +117,12 @@
         <td>
             <div class="input-form">
                 <label for="studentFIO">ФИО</label>
-                <input id="studentFIO" type="text" value="" size="50">
+                <input id="studentFIO" size="50" type="text" value="">
                 </br></br><label for="studentDateBirth">Дата рождения</label>
-                <input id="studentDateBirth" name="DateBirth" type="date" value="2004-01-01" size="50">
+                <input id="studentDateBirth" name="DateBirth" size="50" type="date" value="2004-01-01">
                 </br></br><label for="studentGender">Пол</label>
-                <input id="studentGender" type="text" value="" size="50">
-                 </br></br>
+                <input id="studentGender" size="50" type="text" value="">
+                </br></br>
                 <button id="getStudent" onclick="addStudent()">Добавить</button>
                 <button id="setStudentMedianAge" onclick="setMedianAge()">Средний возраст студентов</button>
             </div>
@@ -176,3 +167,4 @@
 </table>
 </body>
 </html>
+
