@@ -62,12 +62,12 @@
 					var cell2 = row.insertCell(1);
 					var cell3 = row.insertCell(2);
 					var cell4 = row.insertCell(3);
-					cell4.class= "calcMedianAge";
+					cell4.className= "calcMedianAge";
 					cell1.innerHTML = studentFIO;
 					cell2.innerHTML = studentGender;
 					cell3.innerHTML = studentDateBirth;
 					cell4.innerHTML = getAgeStudent();
-					setMedianAge();
+					setMedianAge(table);
 			   }
 
 				 function getAgeStudent (){
@@ -80,30 +80,26 @@
 					return age;
 				}
 
-				function setMedianAge (){
-					var table = document.getElementById("studentsTab");
-					var actualAgeCell = getActualAgeCell(table);
-					var medianAge = getMedianAge(actualAgeCell);
+				function setMedianAge (table){
+					var medianAge = getMedianAge();
 					showMedianAge(medianAge, medianAgeCell);
 				}
-				function getActualAgeCell(table){
-					var calcMedianAged = table.querySelectorAll('td.calcMedianAge');
-					return calcMedianAged;
-					}
 
-				function getMedianAge (elms){
+
+				function getMedianAge (){
 					var sum = 0;
 					var sumMedian = 0;
-					var length = elms.length;
+					var el = document.getElementsByClassName("calcMedianAge");
+					var length = el.length;
 					for (var i = 0; i < length; i++ ){
-						sum += Number(elms[i].innerHTML);
+						sum += Number(el[i].innerHTML);
 						}
 					sumMedian = parseInt(sum/length);
 					return sumMedian;
 			   }
 
-				function showMedianAge (sumMedian, elms){
-					elms.innerHTML = sumMedian;
+				function showMedianAge (sumMedian, el){
+					el.innerHTML = sumMedian;
 				}
 		</script>
 </head>
@@ -167,4 +163,3 @@
 </table>
 </body>
 </html>
-
